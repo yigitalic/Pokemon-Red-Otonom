@@ -1,0 +1,23 @@
+# General
+.venv/
+__pycache__/
+*.log
+.DS_Store
+
+# ROMs and Saves
+*.gb
+*.gb.ram
+*.gbs
+*.sav
+*.state*
+
+# IDEs
+.vscode/
+.idea/
+
+# Large binaries from demos/datasets if any
+*.mp4
+*.avi
+*.zip
+*.rar
+*.7z
