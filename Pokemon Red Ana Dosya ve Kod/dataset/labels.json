@@ -9,7 +9,7 @@
     },
     {
         "step": 10,
-        "action": "down",
+        "action": "left",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -25,7 +25,7 @@
     },
     {
         "step": 30,
-        "action": "right",
+        "action": "up",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -41,7 +41,7 @@
     },
     {
         "step": 50,
-        "action": "right",
+        "action": "down",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -57,7 +57,7 @@
     },
     {
         "step": 70,
-        "action": "up",
+        "action": "right",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -65,7 +65,7 @@
     },
     {
         "step": 80,
-        "action": "down",
+        "action": "up",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -81,7 +81,7 @@
     },
     {
         "step": 100,
-        "action": "up",
+        "action": "left",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -89,7 +89,7 @@
     },
     {
         "step": 110,
-        "action": "left",
+        "action": "up",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -129,7 +129,7 @@
     },
     {
         "step": 160,
-        "action": "right",
+        "action": "up",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -153,7 +153,7 @@
     },
     {
         "step": 190,
-        "action": "up",
+        "action": "left",
         "map": 38,
         "x": 3,
         "y": 6,
@@ -161,34 +161,34 @@
     },
     {
         "step": 200,
-        "action": "down",
+        "action": "right",
         "map": 38,
-        "x": 3,
-        "y": 6,
+        "x": 6,
+        "y": 1,
         "image": "step_200.png"
     },
     {
         "step": 210,
-        "action": "up",
-        "map": 38,
+        "action": "left",
+        "map": 37,
         "x": 5,
-        "y": 3,
+        "y": 7,
         "image": "step_210.png"
     },
     {
         "step": 220,
-        "action": "left",
-        "map": 37,
-        "x": 7,
-        "y": 7,
+        "action": "up",
+        "map": 0,
+        "x": 8,
+        "y": 4,
         "image": "step_220.png"
     },
     {
         "step": 230,
         "action": "up",
         "map": 0,
-        "x": 7,
-        "y": 6,
+        "x": 10,
+        "y": 1,
         "image": "step_230.png"
     },
     {
@@ -220,15 +220,15 @@
         "action": "up",
         "map": 0,
         "x": 10,
-        "y": 1,
+        "y": 6,
         "image": "step_270.png"
     },
     {
         "step": 280,
-        "action": "up",
-        "map": 0,
-        "x": 10,
-        "y": 3,
+        "action": "down",
+        "map": 40,
+        "x": 5,
+        "y": 11,
         "image": "step_280.png"
     },
     {
@@ -236,12 +236,12 @@
         "action": "right",
         "map": 40,
         "x": 5,
-        "y": 11,
+        "y": 3,
         "image": "step_290.png"
     },
     {
         "step": 300,
-        "action": "up",
+        "action": "right",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -249,7 +249,7 @@
     },
     {
         "step": 310,
-        "action": "down",
+        "action": "right",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -257,7 +257,7 @@
     },
     {
         "step": 320,
-        "action": "up",
+        "action": "right",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -273,7 +273,7 @@
     },
     {
         "step": 340,
-        "action": "down",
+        "action": "right",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -281,7 +281,7 @@
     },
     {
         "step": 350,
-        "action": "down",
+        "action": "right",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -297,7 +297,7 @@
     },
     {
         "step": 370,
-        "action": "up",
+        "action": "right",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -305,7 +305,7 @@
     },
     {
         "step": 380,
-        "action": "left",
+        "action": "right",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -313,7 +313,7 @@
     },
     {
         "step": 390,
-        "action": "right",
+        "action": "left",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -329,7 +329,7 @@
     },
     {
         "step": 410,
-        "action": "right",
+        "action": "down",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -337,7 +337,7 @@
     },
     {
         "step": 420,
-        "action": "down",
+        "action": "left",
         "map": 40,
         "x": 5,
         "y": 3,
@@ -345,10 +345,10 @@
     },
     {
         "step": 430,
-        "action": "left",
+        "action": "down",
         "map": 40,
         "x": 5,
-        "y": 3,
+        "y": 6,
         "image": "step_430.png"
     },
     {
@@ -356,7 +356,7 @@
         "action": "right",
         "map": 40,
         "x": 5,
-        "y": 3,
+        "y": 6,
         "image": "step_440.png"
     },
     {
@@ -368,363 +368,419 @@
         "image": "step_450.png"
     },
     {
-        "step": 460,
-        "action": "right",
-        "map": 40,
-        "x": 5,
-        "y": 6,
-        "image": "step_460.png"
-    },
-    {
-        "step": 470,
+        "step": 1270,
         "action": "down",
         "map": 40,
         "x": 5,
         "y": 6,
-        "image": "step_470.png"
+        "image": "step_1270.png"
     },
     {
-        "step": 1220,
-        "action": "left",
+        "step": 1280,
+        "action": "right",
         "map": 40,
         "x": 5,
         "y": 6,
-        "image": "step_1220.png"
+        "image": "step_1280.png"
     },
     {
-        "step": 1230,
-        "action": "left",
-        "map": 40,
-        "x": 5,
-        "y": 6,
-        "image": "step_1230.png"
-    },
-    {
-        "step": 1240,
+        "step": 1290,
         "action": "down",
         "map": 40,
         "x": 5,
         "y": 6,
-        "image": "step_1240.png"
+        "image": "step_1290.png"
     },
     {
-        "step": 1250,
-        "action": "left",
-        "map": 0,
-        "x": 11,
-        "y": 12,
-        "image": "step_1250.png"
+        "step": 1300,
+        "action": "down",
+        "map": 40,
+        "x": 5,
+        "y": 8,
+        "image": "step_1300.png"
     },
     {
-        "step": 1260,
-        "action": "right",
+        "step": 1310,
+        "action": "up",
         "map": 0,
         "x": 9,
-        "y": 2,
-        "image": "step_1260.png"
+        "y": 8,
+        "image": "step_1310.png"
     },
     {
-        "step": 1630,
-        "action": "up",
-        "map": 12,
-        "x": 11,
-        "y": 35,
-        "image": "step_1630.png"
-    },
-    {
-        "step": 1970,
-        "action": "down",
-        "map": 12,
-        "x": 11,
-        "y": 35,
-        "image": "step_1970.png"
-    },
-    {
-        "step": 2340,
+        "step": 1320,
         "action": "up",
         "map": 12,
         "x": 10,
         "y": 35,
+        "image": "step_1320.png"
+    },
+    {
+        "step": 1330,
+        "action": "up",
+        "map": 12,
+        "x": 12,
+        "y": 28,
+        "image": "step_1330.png"
+    },
+    {
+        "step": 1340,
+        "action": "right",
+        "map": 12,
+        "x": 14,
+        "y": 28,
+        "image": "step_1340.png"
+    },
+    {
+        "step": 1610,
+        "action": "right",
+        "map": 12,
+        "x": 17,
+        "y": 29,
+        "image": "step_1610.png"
+    },
+    {
+        "step": 2020,
+        "action": "right",
+        "map": 12,
+        "x": 16,
+        "y": 31,
+        "image": "step_2020.png"
+    },
+    {
+        "step": 2320,
+        "action": "up",
+        "map": 12,
+        "x": 8,
+        "y": 27,
+        "image": "step_2320.png"
+    },
+    {
+        "step": 2330,
+        "action": "right",
+        "map": 12,
+        "x": 10,
+        "y": 24,
+        "image": "step_2330.png"
+    },
+    {
+        "step": 2340,
+        "action": "left",
+        "map": 12,
+        "x": 11,
+        "y": 20,
         "image": "step_2340.png"
     },
     {
         "step": 2350,
         "action": "up",
         "map": 12,
-        "x": 12,
-        "y": 28,
+        "x": 9,
+        "y": 15,
         "image": "step_2350.png"
     },
     {
-        "step": 2670,
-        "action": "left",
-        "map": 12,
-        "x": 17,
-        "y": 28,
-        "image": "step_2670.png"
-    },
-    {
-        "step": 2810,
+        "step": 2360,
         "action": "right",
-        "map": 12,
-        "x": 17,
-        "y": 29,
-        "image": "step_2810.png"
-    },
-    {
-        "step": 3090,
-        "action": "up",
-        "map": 12,
-        "x": 17,
-        "y": 30,
-        "image": "step_3090.png"
-    },
-    {
-        "step": 3230,
-        "action": "down",
-        "map": 12,
-        "x": 17,
-        "y": 28,
-        "image": "step_3230.png"
-    },
-    {
-        "step": 3510,
-        "action": "up",
-        "map": 12,
-        "x": 17,
-        "y": 31,
-        "image": "step_3510.png"
-    },
-    {
-        "step": 3520,
-        "action": "up",
-        "map": 12,
-        "x": 13,
-        "y": 28,
-        "image": "step_3520.png"
-    },
-    {
-        "step": 3530,
-        "action": "left",
-        "map": 12,
-        "x": 9,
-        "y": 28,
-        "image": "step_3530.png"
-    },
-    {
-        "step": 3540,
-        "action": "up",
-        "map": 12,
-        "x": 10,
-        "y": 24,
-        "image": "step_3540.png"
-    },
-    {
-        "step": 3550,
-        "action": "right",
-        "map": 12,
-        "x": 10,
-        "y": 20,
-        "image": "step_3550.png"
-    },
-    {
-        "step": 3560,
-        "action": "up",
-        "map": 12,
-        "x": 9,
-        "y": 17,
-        "image": "step_3560.png"
-    },
-    {
-        "step": 3570,
-        "action": "left",
-        "map": 12,
-        "x": 11,
-        "y": 14,
-        "image": "step_3570.png"
-    },
-    {
-        "step": 3580,
-        "action": "up",
         "map": 12,
         "x": 12,
         "y": 14,
-        "image": "step_3580.png"
+        "image": "step_2360.png"
     },
     {
-        "step": 3590,
+        "step": 2370,
         "action": "up",
         "map": 12,
         "x": 14,
-        "y": 9,
-        "image": "step_3590.png"
+        "y": 3,
+        "image": "step_2370.png"
     },
     {
-        "step": 3730,
+        "step": 2380,
         "action": "up",
-        "map": 12,
-        "x": 16,
-        "y": 6,
-        "image": "step_3730.png"
-    },
-    {
-        "step": 3740,
-        "action": "up",
-        "map": 12,
-        "x": 12,
-        "y": 2,
-        "image": "step_3740.png"
-    },
-    {
-        "step": 3750,
-        "action": "right",
         "map": 1,
         "x": 20,
-        "y": 28,
-        "image": "step_3750.png"
+        "y": 34,
+        "image": "step_2380.png"
     },
     {
-        "step": 3760,
+        "step": 2390,
         "action": "up",
         "map": 1,
-        "x": 18,
+        "x": 23,
         "y": 28,
-        "image": "step_3760.png"
+        "image": "step_2390.png"
     },
     {
-        "step": 3770,
-        "action": "up",
-        "map": 1,
-        "x": 19,
-        "y": 28,
-        "image": "step_3770.png"
-    },
-    {
-        "step": 3780,
+        "step": 2400,
         "action": "up",
         "map": 1,
         "x": 19,
         "y": 28,
-        "image": "step_3780.png"
+        "image": "step_2400.png"
     },
     {
-        "step": 3790,
+        "step": 2410,
         "action": "down",
         "map": 1,
         "x": 19,
         "y": 19,
-        "image": "step_3790.png"
+        "image": "step_2410.png"
     },
     {
-        "step": 3800,
+        "step": 2420,
         "action": "left",
         "map": 1,
         "x": 30,
         "y": 20,
-        "image": "step_3800.png"
+        "image": "step_2420.png"
     },
     {
-        "step": 3810,
+        "step": 2430,
+        "action": "right",
+        "map": 42,
+        "x": 2,
+        "y": 5,
+        "image": "step_2430.png"
+    },
+    {
+        "step": 2440,
+        "action": "left",
+        "map": 42,
+        "x": 2,
+        "y": 5,
+        "image": "step_2440.png"
+    },
+    {
+        "step": 2450,
+        "action": "left",
+        "map": 42,
+        "x": 2,
+        "y": 5,
+        "image": "step_2450.png"
+    },
+    {
+        "step": 2460,
+        "action": "up",
+        "map": 42,
+        "x": 7,
+        "y": 7,
+        "image": "step_2460.png"
+    },
+    {
+        "step": 2470,
+        "action": "up",
+        "map": 42,
+        "x": 7,
+        "y": 5,
+        "image": "step_2470.png"
+    },
+    {
+        "step": 2480,
         "action": "down",
         "map": 42,
-        "x": 2,
+        "x": 6,
         "y": 5,
-        "image": "step_3810.png"
+        "image": "step_2480.png"
     },
     {
-        "step": 3820,
+        "step": 2490,
+        "action": "up",
+        "map": 42,
+        "x": 6,
+        "y": 6,
+        "image": "step_2490.png"
+    },
+    {
+        "step": 2500,
+        "action": "up",
+        "map": 42,
+        "x": 7,
+        "y": 7,
+        "image": "step_2500.png"
+    },
+    {
+        "step": 2510,
+        "action": "right",
+        "map": 42,
+        "x": 4,
+        "y": 5,
+        "image": "step_2510.png"
+    },
+    {
+        "step": 2520,
+        "action": "right",
+        "map": 42,
+        "x": 4,
+        "y": 5,
+        "image": "step_2520.png"
+    },
+    {
+        "step": 2530,
         "action": "up",
         "map": 42,
         "x": 2,
-        "y": 5,
-        "image": "step_3820.png"
+        "y": 4,
+        "image": "step_2530.png"
     },
     {
-        "step": 3830,
-        "action": "down",
+        "step": 2540,
+        "action": "left",
         "map": 42,
-        "x": 2,
-        "y": 5,
-        "image": "step_3830.png"
+        "x": 0,
+        "y": 7,
+        "image": "step_2540.png"
     },
     {
-        "step": 3840,
-        "action": "left",
-        "map": 1,
-        "x": 29,
-        "y": 28,
-        "image": "step_3840.png"
-    },
-    {
-        "step": 3850,
-        "action": "left",
-        "map": 1,
-        "x": 23,
-        "y": 28,
-        "image": "step_3850.png"
-    },
-    {
-        "step": 3860,
-        "action": "up",
-        "map": 1,
-        "x": 18,
-        "y": 28,
-        "image": "step_3860.png"
-    },
-    {
-        "step": 3870,
-        "action": "right",
-        "map": 1,
-        "x": 19,
-        "y": 20,
-        "image": "step_3870.png"
-    },
-    {
-        "step": 3880,
-        "action": "up",
-        "map": 1,
-        "x": 29,
-        "y": 20,
-        "image": "step_3880.png"
-    },
-    {
-        "step": 3890,
-        "action": "left",
-        "map": 1,
-        "x": 29,
-        "y": 28,
-        "image": "step_3890.png"
-    },
-    {
-        "step": 3900,
-        "action": "left",
-        "map": 1,
-        "x": 23,
-        "y": 28,
-        "image": "step_3900.png"
-    },
-    {
-        "step": 3910,
-        "action": "up",
-        "map": 1,
-        "x": 19,
-        "y": 27,
-        "image": "step_3910.png"
-    },
-    {
-        "step": 3920,
-        "action": "right",
-        "map": 1,
-        "x": 22,
-        "y": 20,
-        "image": "step_3920.png"
-    },
-    {
-        "step": 3930,
+        "step": 2550,
         "action": "up",
         "map": 1,
         "x": 29,
         "y": 21,
-        "image": "step_3930.png"
+        "image": "step_2550.png"
+    },
+    {
+        "step": 2560,
+        "action": "up",
+        "map": 1,
+        "x": 29,
+        "y": 27,
+        "image": "step_2560.png"
+    },
+    {
+        "step": 2570,
+        "action": "up",
+        "map": 1,
+        "x": 24,
+        "y": 28,
+        "image": "step_2570.png"
+    },
+    {
+        "step": 2580,
+        "action": "up",
+        "map": 1,
+        "x": 20,
+        "y": 28,
+        "image": "step_2580.png"
+    },
+    {
+        "step": 2590,
+        "action": "right",
+        "map": 1,
+        "x": 21,
+        "y": 20,
+        "image": "step_2590.png"
+    },
+    {
+        "step": 2600,
+        "action": "down",
+        "map": 1,
+        "x": 29,
+        "y": 22,
+        "image": "step_2600.png"
+    },
+    {
+        "step": 2610,
+        "action": "up",
+        "map": 1,
+        "x": 26,
+        "y": 28,
+        "image": "step_2610.png"
+    },
+    {
+        "step": 2620,
+        "action": "up",
+        "map": 1,
+        "x": 20,
+        "y": 28,
+        "image": "step_2620.png"
+    },
+    {
+        "step": 2630,
+        "action": "up",
+        "map": 1,
+        "x": 19,
+        "y": 22,
+        "image": "step_2630.png"
+    },
+    {
+        "step": 2640,
+        "action": "right",
+        "map": 1,
+        "x": 28,
+        "y": 20,
+        "image": "step_2640.png"
+    },
+    {
+        "step": 2650,
+        "action": "down",
+        "map": 1,
+        "x": 29,
+        "y": 26,
+        "image": "step_2650.png"
+    },
+    {
+        "step": 2660,
+        "action": "up",
+        "map": 1,
+        "x": 24,
+        "y": 28,
+        "image": "step_2660.png"
+    },
+    {
+        "step": 2670,
+        "action": "up",
+        "map": 1,
+        "x": 18,
+        "y": 28,
+        "image": "step_2670.png"
+    },
+    {
+        "step": 2680,
+        "action": "right",
+        "map": 1,
+        "x": 19,
+        "y": 20,
+        "image": "step_2680.png"
+    },
+    {
+        "step": 2690,
+        "action": "up",
+        "map": 1,
+        "x": 29,
+        "y": 20,
+        "image": "step_2690.png"
+    },
+    {
+        "step": 2700,
+        "action": "left",
+        "map": 1,
+        "x": 29,
+        "y": 28,
+        "image": "step_2700.png"
+    },
+    {
+        "step": 2710,
+        "action": "left",
+        "map": 1,
+        "x": 23,
+        "y": 28,
+        "image": "step_2710.png"
+    },
+    {
+        "step": 2720,
+        "action": "up",
+        "map": 1,
+        "x": 19,
+        "y": 27,
+        "image": "step_2720.png"
+    },
+    {
+        "step": 2730,
+        "action": "right",
+        "map": 1,
+        "x": 22,
+        "y": 20,
+        "image": "step_2730.png"
     }
 ]

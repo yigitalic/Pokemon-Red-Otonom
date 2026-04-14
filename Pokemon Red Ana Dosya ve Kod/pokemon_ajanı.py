@@ -36,7 +36,9 @@ class GameState(Enum):
     STATE_HARITA = 1
     STATE_SAVAS = 2
 
+# Ana Kod
 class PokemonAgentPyBoy:
+    # Nesne Başlatma
     def __init__(self, rom_path="Pokemon - Red Version (USA, Europe) (SGB Enhanced).gb"):
         self.rom_path = rom_path
 
@@ -87,6 +89,7 @@ class PokemonAgentPyBoy:
         self.starter_x_hedefi = random.choice([6, 7, 8])
         self.story_state = "TO_VIRIDIAN"
 
+    # Sistemi Çalıştır
     def run(self):
         print("[Zihin] BFS-SLAM Navigasyon ve Tabela Okuma Motoru Aktif!")
         self.skip_intro()
@@ -119,6 +122,7 @@ class PokemonAgentPyBoy:
                 json.dump(self.data_log, f, indent=4)
             self.pyboy.stop()
 
+    # Girişi Atla
     def skip_intro(self):
         print("[Sistem] Intro Kilitleri Kırılıyor...")
         intro_tick = 0
@@ -147,6 +151,7 @@ class PokemonAgentPyBoy:
             self.pyboy.tick()
         print("[Sistem] Haritaya Başarıyla İndi!")
 
+    # Ekranı Oku
     def read_screen_text(self):
         dialog_bytes = [self.pyboy.memory[addr] for addr in range(0x9800, 0x9BFF)]
         text = decode_pokemon_text(dialog_bytes)
@@ -157,6 +162,7 @@ class PokemonAgentPyBoy:
             return True
         return False
 
+    # Yol Bulma
     def bfs_pathfind(self, start_x, start_y, target_x, target_y, map_id):
         if start_x == target_x and start_y == target_y:
             return []
@@ -180,6 +186,7 @@ class PokemonAgentPyBoy:
                         queue.append(((nx, ny), path + [d_name]))
         return []
 
+    # Görsel Hedef
     def get_visual_target(self, mem_x, mem_y, direction="UP"):
         frame = self.pyboy.screen.ndarray
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -227,11 +234,13 @@ class PokemonAgentPyBoy:
             
         return hedef_x, hedef_y
 
+    # Akıllı Keşif
     def explore_smart(self):
         mem_x = self.pyboy.memory[0xD362]
         mem_y = self.pyboy.memory[0xD361]
         map_id = self.pyboy.memory[0xD35E]
 
+        # Harita Analizi
         if self.last_map_id != -1 and self.last_map_id != map_id:
             print(f"[KAPI MÜHÜRÜ] Harita Değişti ({hex(self.last_map_id)} -> {hex(map_id)}). Warp Animasyonu Bekleniyor...")
 
@@ -258,11 +267,13 @@ class PokemonAgentPyBoy:
             self.global_override -= 1
             
         # Evrensel Güvenlik Ağı
+        # Güvenlik Protokolü
         if self.step_counter % 30 == 0:
             if map_id in self.known_walls:
                 self.known_walls[map_id] = set()
 
         # [OTONOM ÇIKIŞ] Yanlış bina mantığı
+        # Bina Denetimi
         is_target_building = False
         if self.story_state in ["TO_VIRIDIAN", "GET_PARCEL"] and map_id == 0x2E: is_target_building = True
         if self.story_state in ["RETURN_TO_OAK", "LEAVING_PALLET"] and map_id == 0x28: is_target_building = True
@@ -278,6 +289,7 @@ class PokemonAgentPyBoy:
 
         hedef_x, hedef_y = -1, -1
 
+        # Başlangıç Kontrolü
         if self.pyboy.memory[0xD163] > 0 and not self.starter_picked:
             print("[Başarı] POKEMON BAŞARIYLA KADROYA KATILDI! Hedef Çıkış Kapısı...")
             self.starter_picked = True
@@ -289,7 +301,7 @@ class PokemonAgentPyBoy:
                 hedef_x, hedef_y = 5, 11 
 
         if self.starter_picked:
-            # OAK'S PARCEL STORY LINE
+            # Görev Senaryosu
             if self.story_state == "TO_VIRIDIAN":
                 if map_id == 0x00: hedef_x, hedef_y = 10, 0
                 elif map_id == 0x24: hedef_x, hedef_y = 7, 1 # Evin Ust Kati
@@ -404,6 +416,7 @@ class PokemonAgentPyBoy:
                 if self.read_screen_text():
                     target["read_sign"] = False 
 
+        # Çarpışma Tespiti
         if self.last_x == mem_x and self.last_y == mem_y and self.last_direction:
             wall_x, wall_y = mem_x, mem_y
             if self.last_direction == "up": wall_y -= 1
@@ -441,6 +454,7 @@ class PokemonAgentPyBoy:
 
         secilen_yon = "down"
 
+        # Rotayı Belirle
         if hedef_x != -1 and hedef_y != -1:
             if mem_x == hedef_x and mem_y == hedef_y:
                 # Hedefe ulaştıysa varsayılan UP (yukarı) dön ama çıkış kapılarında AŞAĞI zorla!
@@ -490,6 +504,7 @@ class PokemonAgentPyBoy:
         if hasattr(self, 'story_state') and self.story_state == "RETURN_TO_OAK":
             if map_id in [0x01, 0x0C] and secilen_yon == "up":
                 secilen_yon = "down"
+        # Veri Günlüğü
         if self.step_counter % 10 == 0:
             frame = self.pyboy.screen.ndarray 
             img_name = f"step_{self.step_counter}.png"
@@ -518,6 +533,7 @@ class PokemonAgentPyBoy:
             self.pyboy.button("b")
             self.pyboy.tick(2)
 
+    # Savaş Yönetimi
     def battle_routine(self, battle_type):
         hp = self.pyboy.memory[0xD16D] # Party Pokemon 1 alt byte HP
         
@@ -526,6 +542,7 @@ class PokemonAgentPyBoy:
         if battle_type == 1 and hp < 10 and self.story_state in ["TO_VIRIDIAN", "RETURN_TO_OAK"]:
             kac = True
 
+        # Savaş Durumu
         if self.step_counter % 30 == 0:
             durum = "[Kaçış] KAÇIYOR! (Can Kritik)" if kac else "Dövüşüyor..."
             print(f"[Savaş] SAVAŞ MOTORU DEVREDE! (Can: {hp}) -> {durum}")
@@ -541,6 +558,7 @@ class PokemonAgentPyBoy:
         self.pyboy.tick(5)
         self.step_counter += 1
 
+# Uygulamayı Başlat
 if __name__ == "__main__":
     agent = PokemonAgentPyBoy()
     agent.run()
