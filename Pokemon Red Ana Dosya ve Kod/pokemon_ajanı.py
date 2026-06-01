@@ -131,7 +131,7 @@ class PokemonAgentPyBoy:
             mem_x = self.pyboy.memory[0xD362]
             mem_y = self.pyboy.memory[0xD361]
 
-            if map_id == 0x26 and mem_x == 3 and mem_y == 6:
+            if intro_tick > 2000 and map_id == 0x26 and mem_x == 3 and mem_y == 6:
                 break
                 
             intro_tick += 1
@@ -267,15 +267,12 @@ class PokemonAgentPyBoy:
             self.global_override -= 1
             
         # Evrensel Güvenlik Ağı
-        # Güvenlik Protokolü
-        if self.step_counter % 30 == 0:
-            if map_id in self.known_walls:
-                self.known_walls[map_id] = set()
+        # Güvenlik Protokolü (Temizlik sadece sıkışınca stuck_frames > 25 ile yapılacaktır)
 
         # [OTONOM ÇIKIŞ] Yanlış bina mantığı
         # Bina Denetimi
         is_target_building = False
-        if self.story_state in ["TO_VIRIDIAN", "GET_PARCEL"] and map_id == 0x2E: is_target_building = True
+        if self.story_state in ["TO_VIRIDIAN", "GET_PARCEL"] and map_id == 0x2A: is_target_building = True
         if self.story_state in ["RETURN_TO_OAK", "LEAVING_PALLET"] and map_id == 0x28: is_target_building = True
         
         buildings = {0x2a: (3, 8), 0x24: (7, 1), 0x25: (3, 8), 0x26: (7, 1), 0x27: (3, 8), 0x2D: (3, 8)}
@@ -284,7 +281,7 @@ class PokemonAgentPyBoy:
             print(f"[Otonom Çıkış] Yanlış bina ({hex(map_id)}), çıkışa gidiliyor: {hedef_x},{hedef_y}")
         
         # [MART KORUMASI] Mart bittiyse Mart'ı da istenmeyen yap
-        if self.story_state not in ["TO_VIRIDIAN", "GET_PARCEL"] and map_id == 0x2E:
+        if self.story_state not in ["TO_VIRIDIAN", "GET_PARCEL"] and map_id == 0x2A:
             hedef_x, hedef_y = 3, 8
 
         hedef_x, hedef_y = -1, -1
@@ -323,13 +320,13 @@ class PokemonAgentPyBoy:
                         hedef_x, hedef_y = 29, 19 # Mart'a gir
                     else:
                         hedef_x, hedef_y = 29, 20 # Mart paspası
-                elif map_id == 0x2E:
+                elif map_id == 0x2A:
                     self.story_state = "GET_PARCEL"
                     self.checkpoint_timer = 0
                     hedef_x, hedef_y = 3, 5
 
             elif self.story_state == "GET_PARCEL":
-                if map_id != 0x2E:
+                if map_id != 0x2A:
                     # Kullanıcı ajan sıkıştığı için onu manuel olarak marketten çıkardıysa veya
                     # otonom sistemler dışında harita atlandıysa paket senaryosu tamamlanmış sayılmalıdır!
                     print("[Paket] DURUM İPTALİ: Market dışında olunduğu için (manuel çıkış) parcel alındı varsayılıyor!")
@@ -353,12 +350,12 @@ class PokemonAgentPyBoy:
                         self.checkpoint_timer = 0
                 
                     # Marketten çıkana kadar DOWN basmaya devam et (Eskiden bloklayan while vardı)
-                    if self.pyboy.memory[0xD35E] == 0x2E and self.story_state == "RETURN_TO_OAK":
+                    if self.pyboy.memory[0xD35E] == 0x2A and self.story_state == "RETURN_TO_OAK":
                         hedef_x, hedef_y = 3, 8
                         if self.step_counter % 5 == 0: self.pyboy.button("b") # Diyalog temizle
                 
             elif self.story_state == "RETURN_TO_OAK":
-                if map_id == 0x2E: hedef_x, hedef_y = 3, 8 # Marketten çık # 8 harita sınırı olduğu için çarpışma algılıyor, direk 7 (paspas) hedeflendi
+                if map_id == 0x2A: hedef_x, hedef_y = 3, 8 # Marketten çık # 8 harita sınırı olduğu için çarpışma algılıyor, direk 7 (paspas) hedeflendi
                 elif map_id == 0x24: hedef_x, hedef_y = 7, 1
                 elif map_id == 0x25: hedef_x, hedef_y = 3, 8
                 elif map_id == 0x01: 
@@ -458,7 +455,7 @@ class PokemonAgentPyBoy:
         if hedef_x != -1 and hedef_y != -1:
             if mem_x == hedef_x and mem_y == hedef_y:
                 # Hedefe ulaştıysa varsayılan UP (yukarı) dön ama çıkış kapılarında AŞAĞI zorla!
-                if hedef_y >= 7 and map_id in [0x2E, 0x28, 0x25, 0x02]: 
+                if hedef_y >= 7 and map_id in [0x2A, 0x28, 0x25, 0x02]: 
                     secilen_yon = "down"
                 else:
                     secilen_yon = "up"
