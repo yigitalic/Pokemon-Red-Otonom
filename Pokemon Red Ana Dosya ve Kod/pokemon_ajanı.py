@@ -240,6 +240,13 @@ class PokemonAgentPyBoy:
         mem_y = self.pyboy.memory[0xD361]
         map_id = self.pyboy.memory[0xD35E]
 
+        if map_id in [0x2F, 0x33, 0x30, 0x02] and getattr(self, 'story_state', '') == "LEAVING_PALLET":
+            print("\n[BİLGİ] Rota 2'den (veya öncesinden) çıkıldı. Kontrol ajandan alınıp size devrediliyor! Artık manuel oynayabilirsiniz.")
+            while self.pyboy.tick():
+                pass
+            exit(0)
+
+
         # Harita Analizi
         if self.last_map_id != -1 and self.last_map_id != map_id:
             print(f"[KAPI MÜHÜRÜ] Harita Değişti ({hex(self.last_map_id)} -> {hex(map_id)}). Warp Animasyonu Bekleniyor...")
